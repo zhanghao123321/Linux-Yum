@@ -1,3 +1,8 @@
+# Linux-Docker
+### 一键安装Docker脚本
+```shell
+bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Docker.sh)
+```
 # Linux-Yum源
 ### 一键安装脚本
 ```shell
