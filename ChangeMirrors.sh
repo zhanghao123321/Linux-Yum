@@ -1,10 +1,5 @@
 #!/bin/bash
 ## 一键更新yum源
-## Author: SuperManito
-## Modified: 2023-10-14
-## License: MIT
-## GitHub: https://github.com/SuperManito/LinuxMirrors
-## Website: https://linuxmirrors.cn
 
 ## 软件源列表
 # 国内格式："软件源名称@软件源地址"
