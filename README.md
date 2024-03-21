@@ -3,10 +3,6 @@
 ```shell
 bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Docker.sh)
 ```
-### 如果上面下载慢，使用下面代理方式：
-```shell
-bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Docker.sh)
-```
 ### 官网安装
 ```shell
 bash <(curl -sSL https://gitee.com/SuperManito/LinuxMirrors/raw/main/DockerInstallation.sh)
