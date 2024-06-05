@@ -24,7 +24,7 @@ echo "                                        "
 echo -e "${PURPLE}欢迎使用 GNU/Linux 更换系统软件源脚本${NC}"
 echo -e "${PURPLE}系统时间: $(date '+%Y-%m-%d %H:%M:%S %Z')${NC}"
 
-# Node.js
+# Node
 install_node() {
     echo -e "${BLUE}请选择你要安装的版本: (例: 16.17.0): ${NC} \c" 
     read node_version
@@ -38,9 +38,9 @@ install_node() {
     rm -f /usr/local/bin/node
     ln -s /usr/local/node/bin/npm /usr/local/bin/
     ln -s /usr/local/node/bin/node /usr/local/bin/
-    echo -e "${BLUE}Node.js version:${NC}\c"
+    echo -e "${BLUE}Node: ${NC}\c"
     node -v
-    echo -e "${BLUE}npm version:${NC}\c"
+    echo -e "${BLUE}Npm: ${NC}\c"
     npm -v
 }
 
