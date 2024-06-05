@@ -82,7 +82,7 @@ PrivateTmp=true
 WantedBy=multi-user.target
 EOL
     systemctl daemon-reload
-    systemctl start nginx
+    systemctl enable nginx --now
     systemctl status nginx
     nginx_version=$(/usr/local/webserver/nginx/sbin/nginx -v 2>&1 | awk -F/ '{print$2}')
     echo -e "${BLUE}Nginx: v$nginx_version${NC}"
@@ -127,7 +127,7 @@ install_php() {
     tar -zxvf php-${php_version}.tar.gz
     
     # 编译安装
-    cd ${php_version}
+    cd php-${php_version}
     ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-mbstring --enable-ftp --with-gd --with-jpeg-dir=/usr --with-png-dir=/usr --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --enable-sockets --with-freetype-dir=/usr --with-zlib --with-libxml-dir=/usr --with-xmlrpc --enable-zip --enable-fpm --enable-xml --enable-sockets --with-gd --with-zlib --with-iconv --enable-zip --with-freetype-dir=/usr/lib/ --enable-soap --enable-pcntl --enable-cli --with-curl --with-openssl --with-pdo-mysql
     make -j$(nproc) && make -j$(nproc) install
     
@@ -200,7 +200,7 @@ install_php() {
 
 # 输出软件选择菜单
 echo "                                        "
-echo "❖  Node.js                            1)"
+echo "❖  Node                               1)"
 echo "❖  Nginx                              2)"
 echo "❖  Go                                 3)"
 echo "❖  PHP                                4)"
