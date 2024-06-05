@@ -147,32 +147,33 @@ install_php() {
     mkdir -p /usr/local/php/logs/
     
     # 配置php-fpm
-    echo "[global]
-    pid = run/php-fpm.pid
-    error_log = /usr/local/php/logs/php-fpm.log
-    rlimit_files = 655360
-    rlimit_core = 0
+    cat <<EOL > php-fpm.conf
+[global]
+pid = run/php-fpm.pid
+error_log = /usr/local/php/logs/php-fpm.log
+rlimit_files = 655360
+rlimit_core = 0
 
-    [www]
-    user = www
-    group = www
-    listen = 0.0.0.0:9000
-    pm = dynamic
-    pm.max_children = 500
-    pm.start_servers = 10
-    pm.min_spare_servers = 10
-    pm.max_spare_servers = 20
-    pm.max_requests = 1000
-    pm.status_path = /fpm-status
-    ping.path = /ping-status
-    ping.response = ok
-    slowlog = /usr/local/php/logs/php-fpm.slow.log
-    request_slowlog_timeout = 6s
-    rlimit_files = 655360
-    rlimit_core = 0
-    security.limit_extensions = .php .html
-    php_admin_value['date.timezone'] = 'Asia/Shanghai'" > php-fpm.conf
-
+[www]
+user = www
+group = www
+listen = 0.0.0.0:9000
+pm = dynamic
+pm.max_children = 500
+pm.start_servers = 10
+pm.min_spare_servers = 10
+pm.max_spare_servers = 20
+pm.max_requests = 1000
+pm.status_path = /fpm-status
+ping.path = /ping-status
+ping.response = ok
+slowlog = /usr/local/php/logs/php-fpm.slow.log
+request_slowlog_timeout = 6s
+rlimit_files = 655360
+rlimit_core = 0
+security.limit_extensions = .php .html
+php_admin_value['date.timezone'] = 'Asia/Shanghai'
+EOL
     cd php-fpm.d
     cp www.conf.default www.conf
 
