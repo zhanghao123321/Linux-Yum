@@ -175,7 +175,15 @@ install_php() {
 
     cd php-fpm.d
     cp www.conf.default www.conf
-    useradd www
+
+    # 判断是否存在 www 用户
+    if id "www" &>/dev/null; then
+        echo "用户 www 已存在"
+    else
+        useradd www
+        echo "用户 www 已添加"
+    fi
+
     sed -i 's/user = nobody/user = www/' www.conf
     sed -i 's/group = nobody/group = www/' www.conf
     
