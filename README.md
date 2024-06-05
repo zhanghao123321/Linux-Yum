@@ -1,3 +1,9 @@
+# Linux-Scripts
+### 一键安装软件脚本
+```shell
+bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Linux-Scripts.sh)
+```
+
 # Linux-Docker
 ### 一键安装Docker脚本
 ```shell
