@@ -3,6 +3,10 @@
 ```shell
 bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Scripts.sh)
 ```
+### 代理加速下载
+```shell
+bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Scripts.sh)
+```
 
 # Linux-Docker
 ### 一键安装Docker脚本
