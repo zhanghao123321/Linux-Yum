@@ -3,7 +3,7 @@
 ```shell
 bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Scripts.sh)
 ```
-### 代理加速下载
+### 代理加速方式：
 ```shell
 bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Scripts.sh)
 ```
@@ -27,7 +27,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/Linux-Yum/main
 # 海外使用
 bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Mirrors.sh) --abroad
 ```
-### 如果上面下载慢，使用下面代理方式：
+### 代理加速方式：
 ```shell
 # 国内使用
 bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Mirrors.sh)
