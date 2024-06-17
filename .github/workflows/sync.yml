@@ -1,17 +1,42 @@
-# .github/workflows/sync.yml
-name: Sync Fork
+name: Sync LinuxMirrors
 
 on:
-  push: # push 时触发, 主要是为了测试配置有没有问题
   schedule:
-    - cron: '* */3 * * *' # 每3小时触发, 对于一些更新不那么频繁的项目可以设置为每天一次, 低碳一点
+    # 每天凌晨1点运行同步任务
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+    # 手动触发
+
 jobs:
-  repo-sync:
+  sync:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: TG908/fork-sync@v1.6.3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          owner: SuperManito/LinuxMirrors
-          head: main # fork 的上游仓库 branch
-          base: main # 本地仓库 branch
+    - name: Setup SSH key
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+
+    - name: Checkout source repository
+      uses: actions/checkout@v2
+      with:
+        repository: SuperManito/LinuxMirrors
+        path: src
+
+    - name: Configure Git
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+    
+    - name: Sync repository
+      run: |
+        cd src
+        git remote set-url origin git@github.com:<your-username>/<your-repo>.git
+        git fetch origin
+        git reset --hard origin/main
+        git push origin HEAD:main --force
+
+    - name: Push changes
+      run: |
+        cd src
+        git push origin main
