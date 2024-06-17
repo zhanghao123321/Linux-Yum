@@ -1,40 +1,17 @@
-name: Sync File
+# .github/workflows/sync.yml
+name: Sync Fork
 
 on:
+  push: # push 时触发, 主要是为了测试配置有没有问题
   schedule:
-    - cron: '0 0 * * *' # 每天定时运行
-  workflow_dispatch: # 允许手动触发
-
+    - cron: '* */3 * * *' # 每3小时触发, 对于一些更新不那么频繁的项目可以设置为每天一次, 低碳一点
 jobs:
-  sync_file:
+  repo-sync:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout this repository
-      uses: actions/checkout@v3
-
-    - name: Checkout source repository
-      uses: actions/checkout@v3
-      with:
-        repository: SuperManito/LinuxMirrors # 替换为源仓库的所有者和仓库名
-        path: source_repo
-        ref: main # 替换为源仓库的分支名
-
-    - name: Copy file from source repository
-      run: |
-        cp source_repo/path/to/your/file ./path/to/your/destination
-
-    - name: Configure git
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-
-    - name: Commit changes
-      run: |
-        git add .
-        git commit -m "Sync file from source repository" || echo "No changes to commit"
-
-    - name: Push changes
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: TG908/fork-sync@v1.6.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          owner: SuperManito/LinuxMirrors
+          head: main # fork 的上游仓库 branch
+          base: main # 本地仓库 branch
