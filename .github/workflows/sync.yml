@@ -31,7 +31,7 @@ jobs:
     - name: Sync repository
       run: |
         cd src
-        git remote set-url origin git@github.com:<your-username>/<your-repo>.git
+        git remote set-url origin git@github.com:zhanghao123321/Linux-Yum.git
         git fetch origin
         git reset --hard origin/main
         git push origin HEAD:main --force
