@@ -8,6 +8,11 @@ bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/Linux-Yum/main
 bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Scripts.sh)
 ```
 
+# 换源工具
+```shell
+curl -L https://gitee.com/RubyMetric/chsrc/releases/download/pre/chsrc-x64-linux -o chsrc; chmod +x ./chsrc
+```
+
 # Linux-Docker
 ### 一键安装Docker脚本
 ```shell
