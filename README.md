@@ -37,9 +37,9 @@ bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/LinuxMirrors/m
 ### 代理加速方式：
 ```shell
 # 国内使用
-bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Mirrors.sh)
+bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/ChangeMirrors.sh)
 # 教育网用
-bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Mirrors.sh) --edu
+bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/ChangeMirrors.sh) --edu
 # 海外使用
-bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Mirrors.sh) --abroad
+bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/ChangeMirrors.sh) --abroad
 ```
