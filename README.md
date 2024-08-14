@@ -21,7 +21,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/LinuxMirrors/m
 ### 代理加速方式：
 ```shell
 # 国内使用
-bash <(curl -sSL https://external.githubfast.com/[https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Mirrors.sh](https://raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/DockerInstallation.sh))
+bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/DockerInstallation.sh)
 ```
 
 # Linux-Yum源
