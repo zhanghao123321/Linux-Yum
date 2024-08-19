@@ -5,7 +5,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/Linux-Yum/main
 ```
 ### 代理加速方式：
 ```shell
-bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Scripts.sh)
+bash <(curl -sSL https://ghproxy.cc/https://raw.githubusercontent.com/zhanghao123321/Linux-Yum/main/Scripts.sh)
 ```
 
 # 换源工具
@@ -21,7 +21,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/LinuxMirrors/m
 ### 代理加速方式：
 ```shell
 # 国内使用
-bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/DockerInstallation.sh)
+bash <(curl -sSL https://ghproxy.cc/https://raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/DockerInstallation.sh)
 ```
 
 # Linux-Yum源
@@ -37,9 +37,9 @@ bash <(curl -sSL https://raw.githubusercontent.com/zhanghao123321/LinuxMirrors/m
 ### 代理加速方式：
 ```shell
 # 国内使用
-bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/ChangeMirrors.sh)
+bash <(curl -sSL https://ghproxy.cc/https://raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/ChangeMirrors.sh)
 # 教育网用
-bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/ChangeMirrors.sh) --edu
+bash <(curl -sSL https://ghproxy.cc/https://raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/ChangeMirrors.sh) --edu
 # 海外使用
-bash <(curl -sSL https://external.githubfast.com/https/raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/ChangeMirrors.sh) --abroad
+bash <(curl -sSL https://ghproxy.cc/https://raw.githubusercontent.com/zhanghao123321/LinuxMirrors/main/ChangeMirrors.sh) --abroad
 ```
